@@ -10,6 +10,8 @@ import javafx.stage.StageStyle;
 public class Main extends Application{
 
 	Usuario usuario;
+	Scene sc2;
+	Label price = new Label();
 
 	public static void main(String[] args){
 		launch(args);
@@ -58,9 +60,8 @@ public class Main extends Application{
 		Label precio = new Label("");
 
 
-		Scene sc2 = new Scene(casillas);
-
-		
+		 sc2 = new Scene(casillas);
+		 				
 						tb1.setOnAction( event->{
 						
 								precio.setText("Monto a pagar por boleto normal: $1500" );
@@ -78,7 +79,7 @@ public class Main extends Application{
 							
 						});
 
-
+						
 
 		button.addEventHandler(MouseEvent.MOUSE_CLICKED ,new EventHandler<MouseEvent>(){
 			public void handle(MouseEvent e){
@@ -135,6 +136,8 @@ public class Main extends Application{
 		public void handle(MouseEvent e){
 			Control c= (Control)e.getSource();
 			c.setStyle("-fx-background-color: red;");
+			price.setText("Monto a pagar: " );						
+	 
 		}
 
 	}	
